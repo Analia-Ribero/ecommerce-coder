@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Item from './Item';
 
 
 function ItemList  ({item})  {
@@ -7,8 +7,10 @@ function ItemList  ({item})  {
     return (
       <div>
           {item.map (itemIterado=>{
-               <item item = {itemIterado}/>
-            
+           return <div>
+           <Item item= {itemIterado}/>
+           <hr/> <hr />
+           </div>
               })
           }
       </div>

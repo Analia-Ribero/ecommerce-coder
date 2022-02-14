@@ -67,7 +67,7 @@ useEffect (()=>{
     <>
     <h1>{props.greeting}</h1>
     <section>
-    
+    <ItemList item= {item}/>    
 
     </section>
     </>
