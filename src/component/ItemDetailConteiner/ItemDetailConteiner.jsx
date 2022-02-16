@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ItemList from './ItemList'
+import ItemDetail from './ItemDetail';
+
 
 
 const baseDeDatos = 
@@ -32,11 +33,11 @@ const baseDeDatos =
     "talle": "Xl"
   }]
 
-function obtenerBaseDatos (){
+function getItem (){
   let error = false
   return new Promise ((resolve, reject)=>{
     setTimeout (
-      ()=> {resolve(baseDeDatos)},
+      ()=> {resolve(baseDeDatos[0])},
       500);
       if (error) {
         reject ( new error ('error en la promise'))
@@ -53,7 +54,7 @@ export default function ItemListConteiner(props) {
 const [item, setItem] = useState ([]);
 
 useEffect (()=>{
-  let guardarDatos = obtenerBaseDatos ();
+  let guardarDatos = getItem ();
   guardarDatos.then ((itemPromise) => {
     setItem (itemPromise);
   }).catch ( (error)=> {
@@ -67,12 +68,10 @@ useEffect (()=>{
     <>
     <h1>{props.greeting}</h1>
     <section>
-    <ItemList item= {item}/>    
+    <ItemDetail item= {item}/>    
 
     </section>
     </>
   );
   
 }
-
-
