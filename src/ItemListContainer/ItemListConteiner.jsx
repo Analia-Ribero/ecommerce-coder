@@ -35,18 +35,19 @@ const baseDeDatos =
     "precio": "33000",
     "descripcion":"Pantalla. 720 x 1080 pixeles, camara frontal 8 megapixeles, memoria 3GB"
   }]
+  let error = false;
 
 function obtenerBaseDatos (categoriaId){
-  let error = false
+ 
   return new Promise ((resolve, reject)=>{
     setTimeout (
       ()=> {
-        if (categoriaId){
+        if(categoriaId){
         let resultado = baseDeDatos.filter((item)=>{
-          return item.modelo === categoriaId
+          return item.id === categoriaId;
         })
         resolve(resultado);}
-        else resolve(baseDeDatos);
+        else resolve (obtenerBaseDatos);
         },
       3000);
       if (error) {
@@ -59,16 +60,19 @@ function obtenerBaseDatos (categoriaId){
 
 
 
-export default function ItemDetailConteiner(props) {
+export default function ItemListConteiner(props) {
 
 let {categoriaId} = useParams();
-const [item, setItem] = useState ();
+
+const [item, setItem] = useState ([]);
 
 
 useEffect (()=>{
+  
   let guardarDatos = obtenerBaseDatos (categoriaId);
-  guardarDatos.then ((item) => {
-    setItem (item);
+  
+  guardarDatos.then ((itemPromise) => {
+    setItem (itemPromise);
   }).catch ( (error)=> {
     console.error(error);
   }).finally (()=>{
@@ -78,7 +82,7 @@ useEffect (()=>{
 
   return ( 
     <>
-    <h1>{props.greeting}</h1>
+    <h2>{props.greeting}</h2>
     <section>
     <ItemList item= {item}/>    
 

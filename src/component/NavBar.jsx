@@ -15,17 +15,12 @@ function NavBar() {
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+       
         <li className="nav-item">
-          <li className="nav-link active" aria-current="page" to="/categoria/A22">A22</li>
-        </li>
-        <li className="nav-item">
-         <Link className="nav-link" to="/categoria/A52">A52</Link>
-        </li>
-        <li className="nav-item">
-         <Link className="nav-link" to="/categoria/A02">A02</Link>
+         <Link className="nav-link" to="/categoria/modelo">Celulares</Link>
         </li>
         <li className="nav-item dropdown">
-          <li className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li className="nav-link dropdown-toggle" to="/categoria/id" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mayoristas
           </li>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">

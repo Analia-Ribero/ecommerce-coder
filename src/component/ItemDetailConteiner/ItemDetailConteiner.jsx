@@ -60,7 +60,7 @@ function getItem (idItem){
 
 export default function ItemDetailConteiner(props) {
 
-const [item, setItem] = useState ([]);
+const [item, setItem] = useState ();
 const {id} = useParams();
 useEffect (()=>{
   let guardarDatos = getItem (id);
@@ -76,7 +76,7 @@ useEffect (()=>{
   return ( 
     <>
    
-    <h1>{props.greeting}</h1>
+    <h2>{props.greeting}</h2>
     <section>
     <ItemDetail item= {item}/>
     
