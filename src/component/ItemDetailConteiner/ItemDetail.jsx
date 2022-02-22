@@ -1,5 +1,6 @@
 import React from 'react'
-/*import ItemCount from '/component/ItemCount/ItemCount'*/
+import ItemCount from '../ItemCount/ItemCount'
+
 
 
 function ItemDetail ({item}) {
@@ -12,8 +13,14 @@ if (item){
           <h4>{item.marca}</h4>
           <h4>{item.modelo}</h4>
           <h4>{item.precio} </h4>
+          <ItemCount
+          stock= {5}
+          initial={1}/>
     </div>
     )
+  }
+  else{
+    return <h2>Cargando</h2>
   }
 } 
 

@@ -17,16 +17,10 @@ function NavBar() {
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
        
         <li className="nav-item">
-         <Link className="nav-link" to="/categoria/modelo">Celulares</Link>
+         <Link className="nav-link" to="/categoria/Motorola">Motorola</Link>
         </li>
-        <li className="nav-item dropdown">
-          <li className="nav-link dropdown-toggle" to="/categoria/id" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Mayoristas
-          </li>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link className="dropdown-item" to="/categoria/">Beneficios</Link></li>
-            <li><Link className="dropdown-item" to="/categoria/">Hace tu pedido</Link></li>
-          </ul>
+        <li className="nav-item">
+         <Link className="nav-link" to="/categoria/Samsung">Samsung</Link>
         </li>
       </ul>
       <form className="d-flex">

@@ -12,7 +12,7 @@ const baseDeDatos =
     "descripcion":"Pantalla. 720 x 1080 pixeles, camara frontal 13 megapixeles, memoria 4GB"
   }, {
     "id": 2,
-    "marca": "Samsung",
+    "marca": "Motorola",
     "modelo": "A52",
     "precio": "$63000",
     "descripcion":"Pantalla. 1080 x 2400 pixeles, camara frontal 32 megapixeles, memoria 6GB"
@@ -24,13 +24,13 @@ const baseDeDatos =
     "descripcion":"Pantalla 6.7 pulgadas, camara frontal 32 megapixeles, memoria 6GB"
   }, {
     "id": 4,
-    "marca": "Samsung",
+    "marca": "Nokia",
     "modelo": "A02",
     "precio": "$23000",
     "descripcion":"Pantalla 6.5 pulgadas, camara frontal 5 megapixeles, memoria 2GB"
   }, {
     "id": 5,
-    "marca": "Samsung",
+    "marca": "LG",
     "modelo": "A12",
     "precio": "33000",
     "descripcion":"Pantalla. 720 x 1080 pixeles, camara frontal 8 megapixeles, memoria 3GB"
@@ -42,7 +42,7 @@ function getItem (idItem){
     setTimeout (
       ()=> {
         let item = baseDeDatos.find ((item)=>{
-          return item.id === idItem
+          return item.id === Number(idItem);
         });
         resolve (item);
         

@@ -7,10 +7,12 @@ function ItemList  ({item})  {
     return (
       <div>
           {item.map (itemIterado=>{
-           return <div>
-           <Item item= {itemIterado}/>
-           <hr/> <hr />
-           </div>
+           return (
+           <Item 
+           key={itemIterado.id}
+           item= {itemIterado}/>
+           )
+          
               })
           }
       </div>

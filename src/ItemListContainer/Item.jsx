@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 function Item ({item}) {
     return (
+      <>
       <div>
           <h4>{item.id}</h4>
           <h4> {item.marca} </h4>
@@ -12,7 +13,10 @@ function Item ({item}) {
           <button className='btn btn-dark'>
           <Link to= {`/item/${item.id}`}>Detalles del Producto</Link>
           </button>
+          
       </div>
+      <hr />
+      </>
     )
   }
   
