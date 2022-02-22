@@ -1,11 +1,8 @@
-# Getting Started with Create React App
+# Black Monkey 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
+Ecommerce de celulares
+## Tecnologia utilizada
+CSS HTML REACT
 ### `npm start`
 
 Runs the app in the development mode.\
