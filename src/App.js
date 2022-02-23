@@ -5,6 +5,7 @@ import ItemListConteiner from './ItemListContainer/ItemListConteiner';
 import ItemDetailConteiner from './component/ItemDetailConteiner/ItemDetailConteiner';
 
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Cart from './component/Cart';
 
 
 
@@ -13,17 +14,23 @@ function App() {
     <BrowserRouter>
     <div>
     <NavBar/>
-    
     <Routes>
       <Route 
       path="/"
-      element={<ItemListConteiner greeting= "Bienvenidos a BlackMonkey" />}/>
+      element={<ItemListConteiner greeting= "Bienvenidos a BlackMonkey" />}
+      />
       <Route 
       path="/categoria/:categoriaId"
-      element={<ItemListConteiner greeting= "Nuestros Productos"/>}/>
+      element={<ItemListConteiner greeting= "Nuestros Productos"/>}
+      />
       <Route 
       path="/item/:id"
-       element={<ItemDetailConteiner/>}/>
+       element={<ItemDetailConteiner/>}
+       />
+    <Route 
+      path="/cart"
+       element={<Cart/>}
+       />
     </Routes>
     </div>
     </BrowserRouter>
