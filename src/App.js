@@ -3,14 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './component/NavBar';
 import ItemListConteiner from './ItemListContainer/ItemListConteiner'; 
 import ItemDetailConteiner from './component/ItemDetailConteiner/ItemDetailConteiner';
-
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import Cart from './component/Cart';
-
+import { CartContextProvider } from './context/CartContext';
+import CartView from '../Cart/CartView';
 
 
 function App() {
   return (
+    <CartContextProvider>
     <BrowserRouter>
     <div>
     <NavBar/>
@@ -29,11 +29,13 @@ function App() {
        />
     <Route 
       path="/cart"
-       element={<Cart/>}
+       element={<CartView/>}
        />
+  
     </Routes>
     </div>
     </BrowserRouter>
+    </CartContextProvider>
   );
 }
 

@@ -1,15 +1,15 @@
-import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
-import { Link } from 'react-router-dom'
-
+import React from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
+import  useCartContext  from '../../context/CartContext';
 
 function ItemDetail ({item}) {
 
-  let [inCart,setInCart] = React.useState(false)
+  
+  const { addItem,isInCart } = useCartContext();
 
 function onAdd(count){
-setInCart(true);
-  alert(`Agregaste  ${count} producto al carrito`);
+addItem (item, count);
 }
 
 if (item){
@@ -21,7 +21,7 @@ if (item){
           <h4>{item.modelo}</h4>
           <h4>{item.precio} </h4>
 
-        { inCart ? (
+        { isInCart(item.id)? (
           <Link to="/cart"><button>Finalizar Compra</button></Link>
           ) : (
           <ItemCount
