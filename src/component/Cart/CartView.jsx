@@ -1,9 +1,9 @@
 import React from "react";
-import useCartContext from "../../context/CartContext"
-import { Link } from "react-router-dom"
+import useCartContext from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 function CartView() {
-    const {itemsInCart, removeItemInCart, clearCart} = useCartContext();
+    const {itemsInCart, removeItem, clearCart} = useCartContext();
 
     if(itemsInCart.length===0) {
         return(
@@ -32,12 +32,13 @@ function CartView() {
                         {
                             itemsInCart.map( item =>(
                                 <tr key={item.id}>
+                                    <td>{item.marca}</td>
                                     <td>{item.modelo}</td>
-                                    <td>{item.price}</td>
+                                    <td>{item.precio}</td>
                                     <td>{item.quantity}</td>
-                                    <td>${(item.quantity*item.price).toFixed(2)}</td>
+                                    <td> {(item.precio * item.quantity)}</td>
                                     <td>
-                                        <button className="btn btn-danger" onClick={()=> removeItemInCart(item.id)}>Eliminar</button>
+                                        <button className="btn btn-danger" onClick={()=>removeItem(item.id)}>Eliminar</button>
                                     </td>
                                 </tr>
                             ))

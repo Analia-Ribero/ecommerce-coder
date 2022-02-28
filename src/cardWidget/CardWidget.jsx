@@ -1,12 +1,12 @@
 import React from 'react';
-import useCartContext from "../../context/CartContext"
+import useCartContext from "../context/CartContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'
 
 
 export default function CardWidget() {
-  const {countItemsInCart}= useCartContext
+  const {countItemsInCart} = useCartContext()
   return (
     <div>
     <Link to="/cart">

@@ -42,7 +42,7 @@ function countItemsInCart(){
 }
 
   return( 
-<CartContext.Provider value={{ removeItem, addItem, isInCart,  itemsInCart, clearCart, countItemsInCart }}>
+<CartContext.Provider value={{ removeItem, addItem, isInCart,itemsInCart, clearCart, countItemsInCart}}>
 { children }
 </CartContext.Provider>
     )
