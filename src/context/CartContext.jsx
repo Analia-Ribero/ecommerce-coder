@@ -41,8 +41,17 @@ function countItemsInCart(){
   return total
 }
 
+function getTotalPrice(){
+  let total = 0;
+  itemsInCart.forEach((item)=>{
+    total += item.quantity * item.price;
+
+  })
+  return total;
+}
+
   return( 
-<CartContext.Provider value={{ removeItem, addItem, isInCart,itemsInCart, clearCart, countItemsInCart}}>
+<CartContext.Provider value={{ removeItem, getTotalPrice, addItem, isInCart,itemsInCart, clearCart, countItemsInCart}}>
 { children }
 </CartContext.Provider>
     )

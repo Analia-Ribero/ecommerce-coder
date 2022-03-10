@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom';
-import { getAllItems } from '../service/firebase';
+import { getAllItems } from '../service/firebase'
 
 
 
 
 
 
-export default function ItemListConteiner({props}) {
+export default function ItemListConteiner({greeting}) {
 
 let {categoriaId} = useParams();
 
@@ -17,7 +17,7 @@ const [item, setItem] = useState ([]);
 
 useEffect (()=>{
   
-  let guardarDatos = categoriaId? getAllItems() : getAllItemsfrom(categoriaId);
+  let guardarDatos = getAllItems();
  guardarDatos
  .then((itemsPromise)=>{
    setItem(itemsPromise);

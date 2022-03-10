@@ -17,7 +17,7 @@ function App() {
     <Routes>
       <Route 
       path="/"
-      element={<ItemListConteiner greeting= "Bienvenidos a BlackMonkey" />}
+      element={<ItemListConteiner greeting = "Bienvenidos a BlackMonkey" />}
       />
       <Route 
       path="/categoria/:categoriaId"
