@@ -6,10 +6,11 @@ function Item ({item}) {
       <>
       <div>
           <h4>{item.id}</h4>
-          <h4> {item.marca} </h4>
-          <h4> {item.modelo} </h4>
-          <h4> {item.precio} </h4>
-          <h4>{item.descripcion}</h4>
+          <img width="250" alt="imagen del producto" src={item.Img}/>
+          <h4> {item.Marca} </h4>
+          <h4> {item.Modelo} </h4>
+          <h4> {item.Precio} </h4>
+          <h4>{item.Descripcion}</h4>
           <button className='btn btn-dark'>
           <Link to= {`/item/${item.id}`}>Detalles del Producto</Link>
           </button>

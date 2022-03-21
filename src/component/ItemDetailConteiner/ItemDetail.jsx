@@ -17,15 +17,16 @@ if (item){
     return (
       <div>
           <h4>{item.id}</h4>
-          <h4>{item.marca}</h4>
-          <h4>{item.modelo}</h4>
-          <h4>{item.precio} </h4>
+          <img width="200" alt="foto producto" src= {item.Img}/>
+          <h4>{item.Marca}</h4>
+          <h4>{item.Modelo}</h4>
+          <h4>{item.Precio} </h4>
 
         { isInCart(item.id)? (
           <Link to="/cart"><button>Finalizar Compra</button></Link>
           ) : (
           <ItemCount
-          stock= {5}
+          stock= {10}
           initial={1}
           onAdd={onAdd}
           />

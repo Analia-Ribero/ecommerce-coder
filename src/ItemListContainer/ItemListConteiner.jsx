@@ -27,7 +27,7 @@ useEffect (()=>{
 );
  return( 
     <>
-    <h2>{props.greeting}</h2>
+    <h2>{greeting}</h2>
     <section>
     <ItemList item= {item}/>    
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
-import { getItem } from '../../firebase';
+import { getItem } from '../../service/firebase';
 
 
-export default function ItemDetailConteiner() {
+export default function ItemDetailConteiner(props) {
 
 const [item, setItem] = useState (null);
 const {id} = useParams();

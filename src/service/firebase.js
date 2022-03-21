@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, colection, getDocs, getDoc, doc } from 'firebase/firestore/lite'
+import { getFirestore, collection, getDocs, getDoc, addDoc, doc } from 'firebase/firestore/lite'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,9 +22,9 @@ export const db = getFirestore (app);
 
 export async function getAllItems(){
   try {
-    const data = colection (db, "items");
-    const itemsColection = await getDocs(data);
-    const result = itemsColection.docs.map(items=>{
+    const data = collection (db, "items");
+    const itemsCollection = await getDocs(data);
+    const result = itemsCollection.docs.map(items=>{
       return{...items.data(), id : items.id}
     });
     return result
@@ -35,7 +35,7 @@ export async function getAllItems(){
 }
 export async function getItem(itemId){
 try{
-  const data = colection (db,"items");
+  const data = collection (db,"items");
   const itemsRef = doc (data, itemId);
 
   let resultDoc = await getDoc (itemsRef);
@@ -45,11 +45,11 @@ catch(err){
   console.log(err)
 }
 }
-async function generateOrder(orderData){
+ export async function generateOrder(orderData){
   try{
-    const colection = colection(data, "orders");
-    const orden = await addDOc (colection, orderData);
-    console.log (order.id)
+    const miCollection = collection(db, "orders");
+    const orden = await addDoc (miCollection, orderData);
+    console.log (orden.id)
   }
   catch(error){
     console.error('error en el envio de datos: ', error);

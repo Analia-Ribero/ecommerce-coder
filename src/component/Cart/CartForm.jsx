@@ -1,19 +1,19 @@
 import React, {useState} from 'react'
 import useCartContext from "../../context/CartContext";
-import generateOrder from "../../services/firebase"
+import { generateOrder } from "../../service/firebase";
 
 
 function CartForm() {
     const {itemsInCart, getTotalPrice} = useCartContext();
-    const {buyer, setBuyer}= useState ({
+   
+    const [buyer, setBuyer]= useState ({
         name:'',
         phone: '',
         email:'' 
        });
 function handleImput(event){
-const target = event.target;
-const value = target.value;
-const nameInp = target.name
+const value = event.target.value;
+const nameInp = event.target.name
 setBuyer({
     ...buyer,
     [nameInp]: value
@@ -29,7 +29,7 @@ function handleSubmit(event){
     const orderData = {
         buyer, items : [...itemsInCart], totalPrice
     }
-    generateOrder(data);
+    generateOrder(orderData);
 }
 
 return (
@@ -38,7 +38,7 @@ return (
         <form className="py-6">
             <div>
                 <label for="buyer-name">Apellido y Nombre</label>
-                <input onChange={handleImput} value={buyer.name} type="text" name="buyername"></input>
+                <input onChange={handleImput} value={buyer.name} type="text" name="name"></input>
             </div>
             <hr/>
             <div>
@@ -52,8 +52,8 @@ return (
             </div>
             <hr/>
             <div className= "btn-group text-center mt-5">
-            <button className= "btn btn-success">Finalizar</button>    
-            <button className= "btn btn-danger"> Cancelar </button>
+            <button onClick={handleSubmit}  className= "btn btn-success">Finalizar</button>    
+            
             </div>
         </form>
     </div>
