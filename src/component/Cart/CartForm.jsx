@@ -34,7 +34,7 @@ function handleSubmit(event){
 
 return (
     <div class="container mt-6 ">
-        <h3>Ingresar los datos para finalizar la compra</h3>
+        <h4 className="btn-group text-center py-4" >Ingresar los datos para finalizar la compra</h4>
         <form className="py-6">
             <div>
                 <label for="buyer-name">Apellido y Nombre</label>
