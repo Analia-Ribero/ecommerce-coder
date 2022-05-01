@@ -16,12 +16,13 @@ if (item){
 
     return (
       <div>
-          <h4>{item.id}</h4>
+        <div class="card" style={{width: "18rem"}}>
+          
           <img width="200" alt="foto producto" src= {item.Img}/>
           <h4>{item.Marca}</h4>
           <h4>{item.Modelo}</h4>
           <h4>{item.Precio} </h4>
-
+          </div>
         { isInCart(item.id)? (
           <Link to="/cart"><button>Finalizar Compra</button></Link>
           ) : (

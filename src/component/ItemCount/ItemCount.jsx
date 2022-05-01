@@ -16,9 +16,11 @@ export default function ItemCount({stock,initial,onAdd}) {
 
   return (
  <div>
+     <div class="card" style={{width: "18rem"}}>
      <button onClick={aumentar} className="btn btn-success">+</button>
      <h4>{count}</h4>
      <button onClick={disminuir} className="btn btn-success">-</button>
      <button className="btn btn-outline-success" onClick={()=>onAdd(count)}>Agregar al Carrito</button>
+     </div>
  </div>);
 }

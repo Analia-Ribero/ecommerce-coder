@@ -6,13 +6,14 @@ import ItemDetailConteiner from './component/ItemDetailConteiner/ItemDetailConte
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { CartContextProvider } from './context/CartContext';
 import CartView from './component/Cart/CartView';
+import './App.css'
 
 
 function App() {
   return (
     <CartContextProvider>
     <BrowserRouter>
-    <div>
+    <div className="App">
     <NavBar/>
     <Routes>
       <Route 
